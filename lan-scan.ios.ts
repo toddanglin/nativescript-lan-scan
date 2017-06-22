@@ -1,6 +1,15 @@
 import { LanScan as LanScanCommon, Address, PingProgress, DeviceInfo, Status } from './lan-scan.common';
 
 declare var LANProperties;
+declare class MMLANScannerDelegate {};
+declare class MMLANScanner {
+    delegate: any;
+
+    start(): any;
+    stop(): any;
+    
+    static alloc(): any;
+};
 
 class LanScanDelegateImpl extends NSObject implements MMLANScannerDelegate {
     public static ObjCProtocols = [MMLANScannerDelegate];
